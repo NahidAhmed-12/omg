@@ -4,8 +4,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Replace with your MongoDB connection string
-const mongoURI = 'your-mongodb-connection-string';
+// Use the MongoDB connection string from environment variables
+const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
